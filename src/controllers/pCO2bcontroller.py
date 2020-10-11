@@ -57,14 +57,43 @@ def mapa_walking():
         corrco2=co2["CO2 Emissions(g/km)"].sum()
         if corrco2==0:
             co2=cars[(cars["Make"]=="HYUNDAI")&(cars["Fuel Type"]=="X")]
-            co2=(co2["CO2 Emissions(g/km)"].mean())*distancia
-            return res._repr_html_()
+            co2=round((co2["CO2 Emissions(g/km)"].mean())*distancia,3)
+            return f"""<!DOCTYPE html>
+            <html lang="es">
+            <head>
+            <meta charset="utf-8">
+            <title>PiggyCO2bank</title>
+            <link rel="icon"type="image/png" href="https://cdn4.iconfinder.com/data/icons/business-economy-market-company-filling-wiht-beaut/283/69-512.png">
+            </head>
+            <body style="margin:50px;text-align:center; background:#fafdcf; color:#000000;font-family:fantasy,arial,helvética; ">
+            <div>
+            <h1>{res._repr_html_()}<h1>
+            <div>
+            <div>
+            <h1>Has ahorrado :{co2}g de CO2<h1>
+            <div>
+            </body>
+            </html>"""
     
         else:
             co2=co2
-            co2=(co2["CO2 Emissions(g/km)"].mean())*distancia
-            return res._repr_html_()
-
+            co2=round((co2["CO2 Emissions(g/km)"].mean())*distancia,3)
+            return f"""<!DOCTYPE html>
+            <html lang="es">
+            <head>
+            <meta charset="utf-8">
+            <title>PiggyCO2bank</title>
+            <link rel="icon"type="image/png" href="https://cdn4.iconfinder.com/data/icons/business-economy-market-company-filling-wiht-beaut/283/69-512.png">
+            </head>
+            <body style="margin:50px;text-align:center; background:#fafdcf; color:#000000;font-family:fantasy,arial,helvética; ">
+            <div>
+            <h1>{res._repr_html_()}<h1>
+            <div>
+            <div>
+            <h1>Has ahorrado :{co2}g de CO2<h1>
+            <div>
+            </body>
+            </html>"""
     
 
 

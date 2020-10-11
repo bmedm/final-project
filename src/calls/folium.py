@@ -37,7 +37,7 @@ def hi_google(origin,destination,alternative):
 def walk(origin, destination,alternative="walking"):
     coordenadas=hi_google(origin,destination,alternative)
     distancia=coordenadas[0]
-    mapa = Map(location=[coordenadas[2]["lat"],coordenadas[2]["lng"]],zoom_start=12)
+    mapa = Map(location=[coordenadas[2]["lat"],coordenadas[2]["lng"]],zoom_start=14)
     chincheta2 = Marker(location=[coordenadas[1]["lat"],coordenadas[1]["lng"]], tooltip="origen", popup="o")
     chinchetad= Marker(location=[coordenadas[2]["lat"],coordenadas[2]["lng"]], tooltip="destino", popup="d")
     chincheta2.add_to(mapa)
@@ -48,7 +48,7 @@ def walk(origin, destination,alternative="walking"):
    
 
 def bicycling(origen,destino,alternativa="bicycling"):
-    mapa = Map(location=[coordenadas[2]["lat"],coordenadas[2]["lng"]],zoom_start=12)
+    mapa = Map(location=[coordenadas[2]["lat"],coordenadas[2]["lng"]],zoom_start=14)
     coor=[]
     for i in db.bicimad:
         coor.append(i)
