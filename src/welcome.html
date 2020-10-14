@@ -5,8 +5,13 @@
 <title>PiggyCO2bank</title>
 <link rel="icon"type="image/png" href="https://cdn4.iconfinder.com/data/icons/business-economy-market-company-filling-wiht-beaut/283/69-512.png">
 </head>
-<body style="margin:50px;text-align:center; background:#cff6fd; color:#000000;font-family:copperplate,arial,helvética; ">
-                <h1 style="color:#f7b5f5;font-family:copperplate; font-size: 50px; "><code>Piggy<big>|CO2|</big>bank</code></h1>
+<body style="margin:50px;text-align:center; background:#cff6fd; 
+background-image:url('https://i.pinimg.com/originals/39/dd/63/39dd637ade2a7f5d4a3b74c0664be29a.jpg');
+background-repeat:no-repeat ;
+background-size: 100% 100%;
+color:#000000;
+font-family:monospace,arial,helvética; ">
+                <h1 style="color:#eeb8ec;font-family:copperplate; font-size: 50px; "><code>Piggy<big>|CO2|</big>bank</code></h1>
             </td>
         </tr>
         <tr>
@@ -15,20 +20,29 @@
             </td>
         </tr>
     </table>
-    <img width="200" height="200" src="https://acegif.com/wp-content/uploads/Earth.gif" alt="foods">
-    <form method="post" action="/prediction/direction" >
-        <h2>Origin</h2>
-        <input name="origin" type="text" />
-        <h2>Destination</h2>
-        <input name="destination" type="text" />
-        <h2>Alternative to drive</h2>
-        <input list="mode" type="text" name="mode" />
-        <datalist id="mode">
-            <option value="bicycling">
-            <option value="transit">
-            <option value="walking">
-        </datalist>
-        <h2>Car Make</h2>
+    <div style="text-align:center;">
+        <table style="margin: 0 auto;" cellspacing="100">
+        <tr>
+        <td>
+            <form method="post" action="/prediction/direction" >
+            <h2>Origin</h2>
+            <input name="origin" type="text" />
+            <h2>Destination</h2>
+            <input name="destination" type="text" />
+            <h2>Alternative</h2>
+            <input list="mode" type="text" name="mode" />
+            <datalist id="mode">
+                <option value="bicycling">
+                <option value="walking">
+                <option value="driving">   
+            </datalist>
+        </td>
+        <td>
+        <img width="300" height="300" src="https://acegif.com/wp-content/uploads/Earth.gif" alt="foods">
+        </td>
+    <td>
+        <form method="post" action="/prediction/direction" >
+        <h2>Car Brand</h2>
         <input list="Make" type="text" name="Make" />
         <datalist id="Make">
             <option value="ACURA">
@@ -71,7 +85,7 @@
             <option value="SRT">
             <option value="SUBARU">            
             <option value="TOYOTA">
-            <option value="VOLSKWAGEN">
+            <option value="VOLKSWAGEN">
             <option value="VOLVO"> 
         </datalist>
         <h2>Car Model</h2>
@@ -80,14 +94,26 @@
         <input list="Fuel" type="text" name="Fuel" />
         <datalist id="Fuel">
             <option value="Premium gasoline">
-            <option value="Regular">
+            <option value="Regular gasoline">
             <option value="Diesel">
             <option value="Ethanol">
             <option value="Natural gas">
         </datalist>
-        <p>
-            <input type="submit" />
-        </p>
-
+    </td>
+    </tr>
+    </table>
+    </div>
+    <form method="post" action="/prediction/direction" >
+        <h2>Mood</h2>
+        <input list="mood" type="text" name="mood" />
+        <datalist id="mood">
+            <option value="Beach">
+            <option value="Nature">
+            <option value="Culture"> 
+            <option value="City"> 
+        </datalist> 
+    <p>
+        <input type="submit" />
+    </p>
 </body>
 </html>
