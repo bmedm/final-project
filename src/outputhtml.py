@@ -10,6 +10,7 @@ def html_walk(res,co2,mood,fuel):
     avco2=[i for i in travel["CO2/pass"]]
     avurl=[i for i in travel["url"]]
     avdest=[i for i in travel["Destino"]]
+    print(fuel)
     return f"""<!DOCTYPE html>
             <html lang="es">
             <head>
@@ -28,7 +29,7 @@ def html_walk(res,co2,mood,fuel):
             </tr>
             <tr>
                 <td colspan="2" style="padding:4px; background-color:whitesmoke; text-align:center;">
-                    <p><b>How much are you going to save the planet?</b></p>
+                    <p><b>How much CO2 are you going to save the planet?</b></p>
                 </td>
             </tr>
             </table>
@@ -73,10 +74,10 @@ def html_walk(res,co2,mood,fuel):
                         <h2 style="color:#252525;font-family:arial; font-size: 20px;" >Equivalent to {int((avco2[0]/co2)+1)} times this same journey in CO2 expenditure by plane and you would save  {round(int((avco2[0]/co2)+1)*fuel,2)}€<h2>
                     </td>
                     <td>
-                        <h2 style="color:#252525;font-family:arial; font-size: 20px;" >Equivalent to {int((avco2[1]/co2)+1)} times this same journey in CO2 expenditure by plane and you would save  {round(int((avco2[0]/co2)+1)*fuel,2)}€<h2>
+                        <h2 style="color:#252525;font-family:arial; font-size: 20px;" >Equivalent to {int((avco2[1]/co2)+1)} times this same journey in CO2 expenditure by plane and you would save  {round(int((avco2[1]/co2)+1)*fuel,2)}€<h2>
                     </td>
                     <td>
-                        <h2 style="color:#252525;font-family:arial; font-size: 20px;" >Equivalent to {int((avco2[2]/co2)+1)} times this same journey in CO2 expenditure by plane and you would save {round(int((avco2[0]/co2)+1)*fuel,2)}€<h2>
+                        <h2 style="color:#252525;font-family:arial; font-size: 20px;" >Equivalent to {int((avco2[2]/co2)+1)} times this same journey in CO2 expenditure by plane and you would save {round(int((avco2[2]/co2)+1)*fuel,2)}€<h2>
                     </td>
                 </tr>
             </table>
@@ -111,7 +112,7 @@ def html_driving(res,co2,mood,fuel):
             </tr>
             <tr>
                 <td colspan="2" style="padding:4px; background-color:whitesmoke; text-align:center;">
-                    <p><b>How much are you going to save the planet?</b></p>
+                    <p><b>How much CO2 are you going to save the planet?</b></p>
                 </td>
             </tr>
             </table>
@@ -191,7 +192,7 @@ def html_bike(res,co2,mood,fuel):
             </tr>
             <tr>
                 <td colspan="2" style="padding:4px; background-color:whitesmoke; text-align:center;">
-                    <p><b>How much are you going to save the planet?</b></p>
+                    <p><b>How much CO2 are you going to save the planet?</b></p>
                 </td>
             </tr>
             </table>

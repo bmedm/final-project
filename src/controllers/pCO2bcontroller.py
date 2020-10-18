@@ -27,15 +27,24 @@ def welcome():
 @app.route("/prediction/direction",methods=["GET","POST"])
 def mapa_walking():
     cars=pd.read_csv("./CO2Emissions_vehi.csv")
-    url = 'https://gasolinabarata.info/precio-gasolina/'
+    url = 'https://www.dieselogasolina.com/'
     res = requests.get(url)
     soup = BeautifulSoup(res.text, 'html.parser')
-    tag=soup.select('.bloqueGasolina div')
-    regular_gasoline= float(tag[2].text.strip().strip("€/l"))
-    premium_gasoline=float(tag[5].text.strip().strip("€/l"))
-    diesel=float(tag[8].text.strip().strip("€/l"))
-    ethanol=float(tag[20].text.strip().strip("€/l"))
-    gas_natural=float(tag[23].text.strip().strip("€/l"))
+    tag=soup.select("td")
+    print("######################################################################")
+    print(tag)
+    print("######################################################################")
+    regular_gasoline= float(tag[4].text.strip().strip("€/l").replace(",","."))
+    print(regular_gasoline)
+    premium_gasoline=float(tag[13].text.strip().strip("€/l").replace(",","."))
+    print(premium_gasoline)
+    diesel=float(tag[22].text.strip().strip("€/l").replace(",","."))
+    print(diesel)
+    ethanol=float(tag[40].text.strip().strip("€/l").replace(",","."))
+    print(ethanol)
+    gas_natural=float(tag[49].text.strip().strip("€/l").replace(",","."))
+    print(gas_natural)
+
 
     fueltypes={"Premium gasoline":"Z", 
             "Regular gasoline":"X",
@@ -76,6 +85,7 @@ def mapa_walking():
         distancia=distancia[0]
         co2=cars[(cars["Make"]==marca) & (cars["Model"]==modelo) & (cars["Fuel Type"]==fuel)]
         save=round((co2["Fuel Consumption City (L/100 km)"].mean()/100)*prices[fuel]*distancia,2)
+        print(co2["Fuel Consumption City (L/100 km)"])
         corrco2=co2["CO2 Emissions(g/km)"].sum()
         if corrco2==0:
             co2=cars[(cars["Make"]==marca)&(cars["Fuel Type"]==fuel)]
