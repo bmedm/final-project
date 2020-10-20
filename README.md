@@ -10,10 +10,10 @@
 # ¿EN QUÉ CONSISTE?
 
 Piggy es una Api que consiste en hacerte saber cuánto CO2 estas emitiendo al planeta en un trayecto concreto en coche.
-!Pero no solo eso!
-Además, utiliza un recomendador de viajes segun tus preferencias para compararte las emisiones de CO2 de ese trayecto con un viaje en avión.
+¡Pero no solo eso!
+Además, utiliza un recomendador de viajes segun tus preferencias para compararte las emisiones de CO2 de ese trayecto con un viaje en avión al destino de tus sueños.
 
-Quizas arece complicado, !pero es bastante chulo! Ya lo verás
+Quizas parece complicado, ¡pero es bastante chulo! Ya lo verás
 
 # Tecnologías utilizadas
 - Python
